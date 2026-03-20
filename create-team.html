@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создать команду - Standoff 2 Forum</title>
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components/forms.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/cards.css">
+  <link rel="stylesheet" href="css/components/custom-select.css">
+  <link rel="stylesheet" href="css/style-create-team.css">
+  <link rel="stylesheet" href="css/media.css">
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Шапка -->
+  <header class="navbar header" role="banner">
+    <div class="container header__container">
+      <div class="header__inner">
+        <div class="header__logo-section">
+          <a href="index.html" class="header__logo" aria-label="На главную страницу">
+            <i class="fas fa-crosshairs header__logo-icon" aria-hidden="true"></i>
+            <div class="header__logo-text">
+              <span class="header__logo-title">Standoff2<span class="header__highlight">Forum</span></span>
+              <span class="header__tagline">Сообщество игроков</span>
+            </div>
+          </a>
+        </div>
+
+        <nav class="nav header__nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-home" aria-hidden="true"></i>
+                <span class="nav__text">Главная</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="news.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-newspaper" aria-hidden="true"></i>
+                <span class="nav__text">Новости</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="forum.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-comments" aria-hidden="true"></i>
+                <span class="nav__text">Форум</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="teams.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-users" aria-hidden="true"></i>
+                <span class="nav__text">Поиск команды</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="trade.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-exchange-alt" aria-hidden="true"></i>
+                <span class="nav__text">Торговля</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="guides.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-book" aria-hidden="true"></i>
+                <span class="nav__text">Гайды</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__auth">
+          <!-- Сюда auth.js подставит либо кнопки входа, либо профиль -->
+        </div>
+
+        <button class="mobile-menu-btn header__menu-btn" aria-label="Открыть меню" aria-expanded="false">
+          <i class="fas fa-bars header__menu-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="main" id="main-content" role="main">
+    <div class="container section__container">
+      <div class="create-team">
+        <!-- Заголовок -->
+        <h1 class="create-team__title">Создать команду</h1>
+        <p class="create-team__subtitle">Найдите игроков для совместной игры и турниров</p>
+
+        <!-- Форма создания команды -->
+        <form id="createTeamForm" class="form">
+          <!-- Название команды -->
+          <div class="form__group">
+            <label for="team-name" class="form__label">
+              <i class="fas fa-tag"></i>
+              Название команды *
+            </label>
+            <input type="text" id="team-name" name="name" class="form__input" required
+              placeholder="Например: Cyber Warriors" minlength="3" maxlength="30">
+            <div class="form__hint">От 3 до 30 символов</div>
+          </div>
+
+          <!-- Тег команды -->
+          <div class="form__row">
+            <div class="form__group">
+              <label for="team-tag" class="form__label">
+                <i class="fas fa-hashtag"></i>
+                Тег команды *
+              </label>
+              <input type="text" id="team-tag" name="tag" class="form__input" required placeholder="Например: CW"
+                minlength="2" maxlength="5">
+              <div class=" form__hint">2-5 символов, будет отображаться в скобках [CW]
+              </div>
+            </div>
+
+            <div class="form__group form__group-team">
+              <label for="team-rank" class="form__label">
+                <i class="fas fa-trophy"></i>
+                Текущий ранг *
+              </label>
+              <select id="team-rank" name="rank" class="form__select custom" required>
+                <option value="">Выберите ранг</option>
+                <option value="Легенда">Легенда</option>
+                <option value="Мастер">Мастер</option>
+                <option value="Элита">Элита</option>
+                <option value="Золото">Золото</option>
+                <option value="Серебро">Серебро</option>
+                <option value="Бронза">Бронза</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Описание команды -->
+          <div class="form__group">
+            <label for="team-description" class="form__label">
+              <i class="fas fa-align-left"></i>
+              Описание команды *
+            </label>
+            <textarea id="team-description" name="description" class="form__textarea" rows="4" required
+              placeholder="Расскажите о вашей команде: цели, график игр, требования" maxlength="500"></textarea>
+            <div class="form__hint">Максимум 500 символов</div>
+          </div>
+
+          <!-- Требования к игрокам -->
+          <div class="form__group">
+            <label for="team-requirements" class="form__label">
+              <i class="fas fa-clipboard-list"></i>
+              Требования к игрокам *
+            </label>
+            <textarea id="team-requirements" name="requirements" class="form__textarea" rows="3" required
+              placeholder="Опишите требования к новым игрокам" maxlength="300"></textarea>
+            <div class="form__hint">Максимум 300 символов</div>
+          </div>
+
+          <!-- Максимум игроков и роли -->
+          <div class="form__row--3">
+            <div class="form__group">
+              <label for="team-max-members" class="form__label">
+                <i class="fas fa-users"></i>
+                Максимум игроков
+              </label>
+              <select id="team-max-members" name="maxMembers" class="form__select custom">
+                <option value="5">5 игроков</option>
+                <option value="4">4 игрока</option>
+                <option value="3">3 игрока</option>
+                <option value="2">2 игрока</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label for="team-wins" class="form__label">
+                <i class="fas fa-trophy"></i>
+                Побед
+              </label>
+              <input type="number" id="team-wins" name="wins" class="form__input" value="0" min="0" step="1">
+            </div>
+
+            <div class="form__group">
+              <label for="team-losses" class="form__label">
+                <i class="fas fa-times-circle"></i>
+                Поражений
+              </label>
+              <input type="number" id="team-losses" name="losses" class="form__input" value="0" min="0" step="1">
+            </div>
+          </div>
+
+          <!-- Роли, которые ищем -->
+          <div class="form__group">
+            <label class="form__label" id="lookingForLabel">
+              <i class="fas fa-user-tag"></i>
+              Кого ищем в команду *
+            </label>
+            <div class="roles-container" id="roles-container" role="group" aria-labelledby="lookingForLabel">
+              <label class="checkbox role-checkbox">
+                <input type="checkbox" name="lookingFor" value="Снайпер" class="checkbox__input">
+                <span class="checkbox__box">
+                  <i class="fas fa-check checkbox__icon"></i>
+                </span>
+                <span class="checkbox__text">Снайпер</span>
+              </label>
+
+              <label class="checkbox role-checkbox">
+                <input type="checkbox" name="lookingFor" value="Стрелок" class="checkbox__input">
+                <span class="checkbox__box">
+                  <i class="fas fa-check checkbox__icon"></i>
+                </span>
+                <span class="checkbox__text">Стрелок</span>
+              </label>
+
+              <label class="checkbox role-checkbox">
+                <input type="checkbox" name="lookingFor" value="Поддержка" class="checkbox__input">
+                <span class="checkbox__box">
+                  <i class="fas fa-check checkbox__icon"></i>
+                </span>
+                <span class="checkbox__text">Поддержка</span>
+              </label>
+
+              <label class="checkbox role-checkbox">
+                <input type="checkbox" name="lookingFor" value="Лидер" class="checkbox__input">
+                <span class="checkbox__box">
+                  <i class="fas fa-check checkbox__icon"></i>
+                </span>
+                <span class="checkbox__text">Лидер (IGL)</span>
+              </label>
+
+              <label class="checkbox role-checkbox">
+                <input type="checkbox" name="lookingFor" value="Любая" class="checkbox__input">
+                <span class="checkbox__box">
+                  <i class="fas fa-check checkbox__icon"></i>
+                </span>
+                <span class="checkbox__text">Любая роль</span>
+              </label>
+            </div>
+            <div class="form__hint">Выберите хотя бы одну роль</div>
+          </div>
+
+          <!-- Логотип команды -->
+          <div class="form__group">
+            <label class="form__label" for="teamLogo">
+              <i class="fas fa-image"></i>
+              Логотип команды
+            </label>
+            <div class="logo-upload">
+              <div class="logo-preview" id="logo-preview">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="logo-upload__btn">
+                <input type="file" id="teamLogo" name="logo" accept="image/*" class="form__input"
+                  style="padding: 10px;">
+                <div class="logo-upload__hint">Рекомендуемый размер: 200x200px</div>
+              </div>
+            </div>
+            <input type="hidden" name="logo" id="logo-hidden">
+          </div>
+
+          <!-- Контакты -->
+          <div class="form__group">
+            <label for="team-contacts" class="form__label">
+              <i class="fas fa-address-card"></i>
+              Контакты для связи (необязательно)
+            </label>
+            <input type="text" id="team-contacts" name="contacts" class="form__input"
+              placeholder="Discord, Telegram, VK и т.д.">
+          </div>
+
+          <!-- Кнопки -->
+          <div class="form__actions">
+            <button type="button" class="btn btn--secondary" id="previewBtn">
+              <i class="fas fa-eye"></i>
+              Предпросмотр
+            </button>
+            <button type="submit" class="btn btn--primary">
+              <i class="fas fa-paper-plane"></i>
+              Создать команду
+            </button>
+            <a href="teams.html" class="btn btn--secondary">
+              <i class="fas fa-times"></i>
+              Отмена
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__content">
+        <div class="footer__column">
+          <h3 class="footer__title">Standoff2Forum</h3>
+          <p class="footer__descr">Крупнейшее русскоязычное сообщество игроков Standoff 2</p>
+          <div class="social">
+            <a href="#" class="social__link" aria-label="ВКонтакте"><i class="fab fa-vk" aria-hidden="true"></i></a>
+            <a href="#" class="social__link" aria-label="Telegram"><i class="fab fa-telegram"
+                aria-hidden="true"></i></a>
+            <a href="#" class="social__link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" class="social__link" aria-label="Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__subtitle">Разделы форума</h4>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="forum.html" class="footer__link">Обсуждение игры</a></li>
+            <li class="footer__item"><a href="teams.html" class="footer__link">Поиск команды</a></li>
+            <li class="footer__item"><a href="trade.html" class="footer__link">Торговля</a></li>
+            <li class="footer__item"><a href="guides.html" class="footer__link">Гайды</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__subtitle">Полезное</h4>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="rules.html" class="footer__link">Правила форума</a></li>
+            <li class="footer__item"><a href="faq.html" class="footer__link">Частые вопросы</a></li>
+            <li class="footer__item"><a href="contact.html" class="footer__link">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Standoff2Forum. Все права защищены.</p>
+        <p class="footer__disclaimer">Это фанатский проект и не связан с разработчиками Standoff 2.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="assets/utils/notifications.js"></script>
+  <script src="assets/utils/forum-data.js"></script>
+  <script src="assets/auth.js"></script>
+  <script src="assets/components/custom-select.js"></script>
+  <script src="assets/main.js"></script>
+  <script src="assets/create-team.js"></script>
+  <script src="assets/footer.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+/* Стили для страницы создания команды */
+.create-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-team__title {
+  font-size: 2rem;
+  color: var(--color-text-white);
+  margin-bottom: 10px;
+}
+
+.create-team__subtitle {
+  color: var(--color-text-secondary);
+  margin-bottom: 30px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__group-team {}
+
+.form__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+  color: var(--color-text-white);
+  font-weight: 500;
+}
+
+.form__label i {
+  color: var(--color-primary-start);
+  width: 20px;
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-start);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form__row--3 {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 25px;
+}
+
+.form__hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Роли */
+.roles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.role-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.role-checkbox:hover {
+  border-color: var(--color-primary-start);
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.role-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary-start);
+}
+
+.role-checkbox span {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Загрузка логотипа */
+.logo-upload {
+  display: flex;
+  /* align-items: center; */
+  gap: 20px;
+}
+
+.logo-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-preview i {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.logo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-upload__btn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+}
+
+.logo-upload__hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Кнопки */
+.form__actions {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.form__actions .btn {
+  flex: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+
+  .form__row,
+  .form__row--3 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .logo-upload {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form__actions {
+    flex-direction: column;
+  }
+}

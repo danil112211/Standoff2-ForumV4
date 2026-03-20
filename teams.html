@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск команды - Standoff 2 Forum</title>
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/cards.css">
+  <link rel="stylesheet" href="css/components/forms.css">
+  <link rel="stylesheet" href="css/components/custom-select.css">
+  <link rel="stylesheet" href="css/style-teams.css">
+  <link rel="stylesheet" href="css/media.css">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Шапка -->
+  <header class="navbar header" role="banner">
+    <div class="container header__container">
+      <div class="header__inner">
+        <div class="header__logo-section">
+          <a href="index.html" class="header__logo" aria-label="На главную страницу">
+            <i class="fas fa-crosshairs header__logo-icon" aria-hidden="true"></i>
+            <div class="header__logo-text">
+              <span class="header__logo-title">Standoff2<span class="header__highlight">Forum</span></span>
+              <span class="header__tagline">Сообщество игроков</span>
+            </div>
+          </a>
+        </div>
+
+        <nav class="nav header__nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-home" aria-hidden="true"></i>
+                <span class="nav__text">Главная</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="news.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-newspaper" aria-hidden="true"></i>
+                <span class="nav__text">Новости</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="forum.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-comments" aria-hidden="true"></i>
+                <span class="nav__text">Форум</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="teams.html" class="nav__link nav__link--header" aria-current="page">
+                <i class="nav__icon fas fa-users" aria-hidden="true"></i>
+                <span class="nav__text">Поиск команды</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="trade.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-exchange-alt" aria-hidden="true"></i>
+                <span class="nav__text">Торговля</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="guides.html" class="nav__link nav__link--header">
+                <i class="nav__icon fas fa-book" aria-hidden="true"></i>
+                <span class="nav__text">Гайды</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__auth">
+          <a href="login.html" class="btn btn-login header__btn" aria-label="Войти на форум">
+            <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Войти
+          </a>
+          <a href="register.html" class="btn btn-register header__btn" aria-label="Зарегистрироваться">
+            <i class="fas fa-user-plus" aria-hidden="true"></i> Регистрация
+          </a>
+        </div>
+
+        <button class="mobile-menu-btn header__menu-btn" aria-label="Открыть меню" aria-expanded="false">
+          <i class="fas fa-bars header__menu-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Меню снизу -->
+  <div class="mobile-menu">
+    <div class="mobile-menu__handle"></div>
+
+    <div class="mobile-menu__header">
+      <h3 class="mobile-menu__title">Меню</h3>
+      <button class="mobile-menu__close">&times;</button>
+    </div>
+
+    <ul class="mobile-menu__list">
+      <li class="mobile-menu__item">
+        <a href="index.html" class="mobile-menu__link">
+          <i class="fas fa-home"></i>
+          <span>Главная</span>
+        </a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="forum.html" class="mobile-menu__link">
+          <i class="fas fa-comments"></i>
+          <span>Форум</span>
+        </a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="teams.html" class="mobile-menu__link">
+          <i class="fas fa-users"></i>
+          <span>Поиск команды</span>
+        </a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="trade.html" class="mobile-menu__link">
+          <i class="fas fa-exchange-alt"></i>
+          <span>Торговля</span>
+        </a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="guides.html" class="mobile-menu__link">
+          <i class="fas fa-book"></i>
+          <span>Гайды</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-menu__auth">
+      <a href="login.html" class="btn btn-login mobile-menu__btn">Войти</a>
+      <a href="register.html" class="btn btn-register mobile-menu__btn">Регистрация</a>
+    </div>
+  </div>
+  <main class="main" id="main-content" role="main">
+    <div class="container section__container">
+      <!-- Хлебные крошки -->
+      <nav class="breadcrumbs" aria-label="Вы здесь:">
+        <ul class="breadcrumbs__list">
+          <!-- JS заполнит -->
+        </ul>
+      </nav>
+
+      <!-- Заголовок страницы -->
+      <header class="page-header">
+        <h1 class="page-header__title">Поиск команды</h1>
+        <p class="page-header__subtitle">Найдите напарников по рангу и создайте киберспортивную команду</p>
+      </header>
+
+      <!-- Фильтры и список команд -->
+      <div class="teams-layout">
+        <!-- Сайдбар с фильтрами -->
+        <aside class="teams-sidebar">
+          <div class="filters">
+            <!-- ===== СЕКЦИЯ ФИЛЬТРОВ ===== -->
+            <div class="filter__content">
+              <h3 class="filters__title">Фильтры</h3>
+              <div class="filters__section">
+
+                <!-- Поиск -->
+                <div class="filters__group">
+                  <label for="search-query" class="filters__label">Поиск</label>
+                  <div class="filters__search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-query" class="filters__input" placeholder="Название или описание...">
+                  </div>
+                </div>
+
+                <!-- Фильтр по рангу -->
+                <div class="filters__group">
+                  <label for="filter-rank" class="filters__label">Ранг</label>
+                  <select id="filter-rank" class="filters__select custom">
+                    <option value="all">Любой</option>
+                    <option value="Легенда">Легенда</option>
+                    <option value="Мастер">Мастер</option>
+                    <option value="Элита">Элита</option>
+                    <option value="Золото">Золото</option>
+                  </select>
+                </div>
+
+                <!-- Фильтр по роли -->
+                <div class="filters__group">
+                  <label for="filter-role" class="filters__label">Роль</label>
+                  <select id="filter-role" class="filters__select custom">
+                    <option value="all">Любая</option>
+                    <option value="Снайпер">Снайпер</option>
+                    <option value="Стрелок">Стрелок</option>
+                    <option value="Поддержка">Поддержка</option>
+                    <option value="Лидер">Лидер</option>
+                  </select>
+                </div>
+
+                <!-- Чекбокс "Только с местами" -->
+                <div class="filters__group">
+                  <label class="checkbox filters__checkbox">
+                    <input type="checkbox" id="filter-slots" class="checkbox__input">
+                    <span class="checkbox__box">
+                      <i class="fas fa-check checkbox__icon"></i>
+                    </span>
+                    <span class="checkbox__text">Только с местами</span>
+                  </label>
+                </div>
+
+                <!-- Кнопка сброса -->
+                <button class="btn btn--secondary" id="reset-filters">
+                  <i class="fas fa-redo-alt"></i>
+                  Сбросить
+                </button>
+              </div>
+            </div>
+
+            <!-- ===== КНОПКА СОЗДАНИЯ ===== -->
+            <div class="filters__actions">
+              <button class="btn btn--primary" id="create-team">
+                <i class="fas fa-plus"></i>
+                Создать команду
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Список команд -->
+        <div class="teams-content">
+          <div class="teams__grid">
+            <!-- JS заполнит карточки команд -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__content">
+        <div class="footer__column">
+          <h3 class="footer__title">Standoff2Forum</h3>
+          <p class="footer__descr">Крупнейшее русскоязычное сообщество игроков Standoff 2</p>
+          <div class="social footer__socal">
+            <a href="#" class="social__link" aria-label="ВКонтакте"><i class="fab fa-vk" aria-hidden="true"></i></a>
+            <a href="#" class="social__link" aria-label="Telegram"><i class="fab fa-telegram"
+                aria-hidden="true"></i></a>
+            <a href="#" class="social__link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" class="social__link" aria-label="Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__subtitle">Разделы форума</h4>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="forum.html" class="footer__link">Обсуждение игры</a></li>
+            <li class="footer__item"><a href="teams.html" class="footer__link">Поиск команды</a></li>
+            <li class="footer__item"><a href="trade.html" class="footer__link">Торговля</a></li>
+            <li class="footer__item"><a href="guides.html" class="footer__link">Гайды</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__subtitle">Полезное</h4>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="rules.html" class="footer__link">Правила форума</a></li>
+            <li class="footer__item"><a href="faq.html" class="footer__link">Частые вопросы</a></li>
+            <li class="footer__item"><a href="contact.html" class="footer__link">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Standoff2Forum. Все права защищены.</p>
+        <p class="footer__disclaimer">Это фанатский проект и не связан с разработчиками Standoff 2.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="assets/utils/notifications.js"></script>
+  <script src="assets/utils/forum-data.js"></script>
+  <script src="assets/components/custom-select.js"></script>
+  <script src="assets/auth.js"></script>
+  <script src="assets/main.js"></script>
+  <script src="assets/breadcrumbs.js"></script>
+  <script src="assets/teams.js"></script>
+  <script src="assets/footer.js"></script>
+</body>
+
+</html>

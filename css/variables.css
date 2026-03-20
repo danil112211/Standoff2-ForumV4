@@ -1,0 +1,63 @@
+:root {
+  /* ===== ОСНОВНЫЕ ЦВЕТА ===== */
+  --color-primary-start: #667eea;
+  --color-primary-end: #764ba2;
+  --color-secondary-start: #f093fb;
+  --color-secondary-end: #f5576c;
+
+  /* ===== ЦВЕТА ДЛЯ КАРТОЧЕК ===== */
+  --color-card-1-start: #667eea;
+  --color-card-1-end: #764ba2;
+  --color-card-2-start: #f093fb;
+  --color-card-2-end: #f5576c;
+  --color-card-3-start: #4facfe;
+  --color-card-3-end: #00f2fe;
+  --color-card-4-start: #43e97b;
+  --color-card-4-end: #38f9d7;
+  --color-card-5-start: #fa709a;
+  --color-card-5-end: #fee140;
+  --color-card-6-start: #a8edea;
+  --color-card-6-end: #fed6e3;
+
+  /* ===== ЦВЕТА ДЛЯ ТЕКСТА ===== */
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #888;
+  --color-text-dark: #666;
+  --color-text-white: #ffffff;
+
+  /* ===== ЦВЕТА ДЛЯ ФОНА ===== */
+  --color-bg-primary: #0f0f1a;
+  --color-bg-secondary: #0a0a12;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-bg-card-hover: rgba(102, 126, 234, 0.05);
+  --color-bg-nav-hover: rgba(255, 255, 255, 0.05);
+
+  /* ===== ЦВЕТА ГРАНИЦ ===== */
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-hover: #667eea;
+
+  /* ===== ЦВЕТА ДЛЯ ГРАДИЕНТОВ ===== */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary-start), var(--color-secondary-end));
+  --gradient-hero: linear-gradient(135deg, rgba(15, 15, 26, 0.9), rgba(30, 30, 60, 0.9));
+  --gradient-hero-title: linear-gradient(135deg, #a3bffa, #ffffff);
+  --gradient-radial: radial-gradient(circle at 30% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+  --gradient-number: linear-gradient(135deg, var(--color-primary-start), var(--color-secondary-start));
+
+  /* ===== ЦВЕТА ДЛЯ ТЕНЕЙ ===== */
+  --shadow-primary: 0 10px 20px rgba(102, 126, 234, 0.3);
+  --shadow-secondary: 0 10px 20px rgba(245, 87, 108, 0.3);
+  --shadow-card: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+  /* БРЕКПОИНТЫ */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  /* ВРЕМЯ АНИМАЦИИ */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}

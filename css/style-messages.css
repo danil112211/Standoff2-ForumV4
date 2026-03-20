@@ -1,0 +1,484 @@
+/* ===== ЛИЧНЫЕ СООБЩЕНИЯ ===== */
+.messages {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: calc(100vh - 200px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+/* Сайдбар с диалогами */
+.messages__sidebar {
+  border-right: 1px solid var(--color-border-light);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.messages__header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.messages__title {
+  color: var(--color-text-white);
+  font-size: 1.2rem;
+}
+
+.messages__search {
+  padding: 15px 20px;
+  position: relative;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.messages__search i {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+}
+
+.messages__search input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  color: var(--color-text-white);
+}
+
+
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal__content {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal__content h3 {
+  color: var(--color-text-white);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* Поиск по ID */
+.search-by-id {
+  margin-bottom: 20px;
+}
+
+.search-by-id label {
+  display: block;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.search-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-input-group input {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  font-size: 1rem;
+}
+
+.search-input-group input:focus {
+  outline: none;
+  border-color: var(--color-primary-start);
+}
+
+.search-input-group button {
+  padding: 12px 20px;
+  white-space: nowrap;
+}
+
+/* Результат поиска */
+#searchResult {
+  margin: 20px 0;
+}
+
+.user-found {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+}
+
+.user-found img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary-start);
+}
+
+.user-found div {
+  flex: 1;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Поле ввода сообщения */
+#messageComposer textarea {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  font-size: 1rem;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+#messageComposer textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-start);
+}
+
+.user-select-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.user-select-item:hover {
+  transform: translateX(5px);
+}
+
+.btn--secondary {
+  /* width: 100%; */
+}
+
+/* Кнопки в модалке */
+.modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal__actions .btn {
+  padding: 10px 20px;
+}
+
+/* Список диалогов */
+.dialogs-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.dialog {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  position: relative;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.dialog:hover {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.dialog.active {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.dialog__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.dialog__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dialog__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dialog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.dialog__name {
+  color: var(--color-text-white);
+  font-weight: 500;
+}
+
+.dialog__time {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.dialog__last-message {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dialog__badge {
+  background: var(--color-primary-start);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Пустое состояние */
+.empty-state {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty-state__icon {
+  font-size: 2rem;
+}
+
+.empty-state__descr {
+  font-size: 1.1rem;
+}
+
+.empty-state__btn {}
+
+/* Область чата */
+.messages__chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat__header {
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.chat__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chat__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat__name {
+  color: var(--color-text-white);
+  font-weight: 500;
+}
+
+.chat__status {
+  color: #2ed573;
+  font-size: 0.8rem;
+}
+
+.chat__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.chat__btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chat__btn:hover {
+  background: var(--color-primary-start);
+  color: white;
+  border-color: var(--color-primary-start);
+}
+
+/* Сообщения */
+.chat__messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  display: flex;
+  max-width: 70%;
+}
+
+.message--sent {
+  align-self: flex-end;
+}
+
+.message--received {
+  align-self: flex-start;
+}
+
+.message__content {
+  padding: 12px 16px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.message--sent .message__content {
+  background: var(--color-primary-start);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message--received .message__content {
+  background: var(--color-bg-card);
+  color: var(--color-text-white);
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--color-border-light);
+}
+
+.message__time {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Поле ввода */
+.chat__input {
+  padding: 20px;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  gap: 10px;
+}
+
+.chat__input textarea {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  resize: none;
+  height: 50px;
+}
+
+.chat__input textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-start);
+}
+
+/* Скролл */
+.dialogs-list::-webkit-scrollbar,
+.chat__messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dialogs-list::-webkit-scrollbar-track,
+.chat__messages::-webkit-scrollbar-track {
+  background: var(--color-bg-card);
+}
+
+.dialogs-list::-webkit-scrollbar-thumb,
+.chat__messages::-webkit-scrollbar-thumb {
+  background: var(--color-primary-start);
+  border-radius: 3px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .messages {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .messages__sidebar {
+    display: none;
+  }
+
+  .messages__sidebar.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+}

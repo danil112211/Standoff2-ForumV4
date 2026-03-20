@@ -1,0 +1,248 @@
+/* ===== СБРОС И БАЗОВЫЕ СТИЛИ ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+
+/* ===== ТИПОГРАФИЯ ===== */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Muller', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-size: 16px;
+  color: #e0e0e0;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+  min-height: 100vh;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__body--auth {
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, #1a1a2e 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page__body--auth::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* ===== КОНТЕЙНЕРЫ ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container--auth {
+  display: grid;
+  align-items: start;
+  max-width: 1200px;
+  padding: 20px 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.container--register {
+  display: grid;
+  align-items: start;
+  max-width: 1200px;
+  padding: 20px 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+/* ===== ШАПКА ===== */
+.navbar {
+  padding: 20px 0;
+  background: rgba(15, 15, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== ЛОГОТИП ===== */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.header__logo:hover {
+  transform: translateY(-2px);
+}
+
+.header__logo-icon {
+  font-size: 2.5rem;
+  color: #667eea;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.logo__highlight,
+.header__highlight {
+  font-family: 'Muller', sans-serif;
+  background: linear-gradient(135deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-weight: 800; */
+}
+
+.header__tagline {
+  padding-top: 2px;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #888;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.main {
+  flex: 1;
+}
+
+.auth {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 20px 0 20px;
+}
+
+/* ===== АВТОРИЗАЦИОННЫЙ ЛАЙАУТ ===== */
+
+.auth__section {
+  height: 100%;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 40px 0;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  gap: 20px;
+}
+
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
+  .container--auth {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .auth__info {
+    display: none;
+    /* На мобилках скрываем инфо-блок */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .header__inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+}
+
+
+.auth-layout__form {
+  animation: slideIn 0.6s ease-out;
+}
+
+.auth__info {
+  animation: slideIn 0.6s ease-out 0.2s backwards;
+}
+
+/* ===== ДОСТУПНОСТЬ ===== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход в аккаунт — Standoff 2 Forum</title>
+  <meta name="description"
+    content="Войдите в свой аккаунт Standoff 2 Forum, чтобы получить доступ ко всем функциям сообщества игроков">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/variables.css"> <!-- 1. переменные -->
+  <link rel="stylesheet" href="css/fontawesome.css"> <!-- 2. Иконки -->
+  <link rel="stylesheet" href="css/components/animations.css"> <!-- 2. анимации -->
+  <link rel="stylesheet" href="css/components/forms.css"> <!-- 3. формы -->
+  <link rel="stylesheet" href="css/components/buttons.css"> <!-- 4. кнопки -->
+  <link rel="stylesheet" href="css/components/cards.css"> <!-- 5. карточки -->
+  <link rel="stylesheet" href="css/style-login.css"> <!-- 6. специфика -->
+  <link rel="stylesheet" href="css/media.css"> <!-- 7. адаптивность -->
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="page__body page__body--auth">
+  <header class="navbar header">
+    <div class="container header__container">
+      <div class="header__inner header__inner-login">
+        <div class="header__logo-section">
+          <a href="index.html" class="header__logo">
+            <i class="fas fa-crosshairs header__logo-icon"></i>
+            <div class="header__logo-text">
+              <span class="header__logo-title">Standoff2<span class="header__highlight">Forum</span></span>
+              <span class="header__tagline">Сообщество игроков</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Навигация -->
+        <nav class="header__nav">
+          <a href="index.html" class="link link--back header__back-link ">
+            <i class="fas fa-arrow-left header__back-icon"></i>
+            <span class="header__back-text">На главную</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="main auth" role="main">
+    <div class="container container--auth">
+      <section class="auth__section">
+        <div class="card card--auth">
+          <div class="card__header auth-card__header">
+            <h1 class="card__title card--auth__title">
+              <i class="fas fa-sign-in-alt card__title-icon"></i>
+              Вход в аккаунт
+            </h1>
+            <p class="card__subtitle">
+              Войдите, чтобы получить доступ ко всем функциям форума
+            </p>
+          </div>
+
+          <!-- Форма входа -->
+          <form class="form form--login" id="loginForm" novalidate>
+            <!-- Поле ввода логина -->
+            <div class="form__group">
+              <label for="login-username" class="form__label">
+                <i class="fas fa-user form__label-icon"></i>
+                Имя пользователя или Email
+              </label>
+              <div class="form__control">
+                <input type="email" id="login-email" name="email" class="form__input" required
+                  placeholder="Email или имя пользователя">
+                <i class="fas fa-user form__icon form__icon--user"></i>
+              </div>
+            </div>
+
+            <!-- Поле ввода пароля -->
+            <div class="form__group">
+              <label for="login-password" class="form__label">
+                <i class="fas fa-lock form__label-icon"></i>
+                Пароль
+              </label>
+              <div class="form__control">
+                <input type="password" id="login-password" name="password" class="form__input"
+                  placeholder="Введите ваш пароль" required autocomplete="current-password">
+                <div class="form__icon form__icon--lock">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <button type="button" class="form__toggle-password" id="togglePassword" aria-label="Показать пароль">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Дополнительные опции -->
+            <div class="form__options">
+              <label class="checkbox checkbox--remember">
+                <input type="checkbox" name="remember" class="checkbox__input">
+                <span class="checkbox__box">
+                  <i class="fas fa-check checkbox__icon"></i>
+                </span>
+                <span class="checkbox__text">Запомнить меня</span>
+              </label>
+
+              <a href="forgot-password.html" class="form__link form__link--forgot">
+                Забыли пароль?
+              </a>
+            </div>
+
+            <!-- Кнопка отправки -->
+            <button type="submit" class="btn btn--primary btn--block btn--submit">
+              <i class="fas fa-sign-in-alt btn__icon"></i>
+              Войти в аккаунт
+              <span class="btn__loader" aria-hidden="true"></span>
+            </button>
+
+            <!-- Разделитель -->
+            <div class="form__divider">
+              <span class="form__divider-text">или войдите через</span>
+            </div>
+
+            <!-- Социальные сети -->
+            <div class="auth__social">
+              <button type="button" class="btn btn--social btn--vk" aria-label="Войти через ВКонтакте">
+                <i class="fab fa-vk btn__icon"></i>
+                <span class="btn__text">ВКонтакте</span>
+              </button>
+              <button type="button" class="btn btn--social btn--google" aria-label="Войти через Google">
+                <i class="fab fa-google btn__icon"></i>
+                <span class="btn__text">Google</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Регистрация -->
+          <div class="form__card">
+            <p class="card__text">
+              Ещё нет аккаунта?
+              <a href="register.html" class="card__link">Зарегистрироваться</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Правая колонка: информация -->
+      <aside class="auth__info">
+        <div class="card card--info">
+          <div class="card__header info-card__header">
+            <h2 class="card__title card__title--info">
+              <i class="fas fa-star info-card__title-icon"></i>
+              Преимущества входа
+            </h2>
+          </div>
+
+          <ul class="features-list" role="list">
+            <li class="features-list__item">
+              <div class="features-list__icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Полный доступ к форуму</h3>
+                <p class="features-list__description">Создавайте темы, комментируйте и участвуйте в обсуждениях</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon">
+                <i class="fas fa-id-card"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Профиль игрока</h3>
+                <p class="features-list__description">Добавьте свой Standoff 2 ID, ранг и статистику</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Поиск команды</h3>
+                <p class="features-list__description">Находите напарников по рангу для совместной игры</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Уведомления</h3>
+                <p class="features-list__description">Будьте в курсе ответов на ваши темы и сообщений</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Участие в конкурсах</h3>
+                <p class="features-list__description">Выигрывайте призы в турнирах и активностях сообщества</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Статистика -->
+          <div class="stats">
+            <div class="stats__item">
+              <div class="stats__number">15,432</div>
+              <div class="stats__label">активных игроков</div>
+            </div>
+            <div class="stats__item">
+              <div class="stats__number">2,547</div>
+              <div class="stats__label">обсуждений</div>
+            </div>
+            <div class="stats__item">
+              <div class="stats__number">128</div>
+              <div class="stats__label">онлайн сейчас</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer footer--auth">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__copyright">
+          &copy; 2023 Standoff2Forum. Все права защищены.
+        </p>
+        <p class="footer__disclaimer">
+          Это фанатский проект и не связан с официальными разработчиками Standoff 2.
+        </p>
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="rules.html" class="footer__nav-link">Правила</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="privacy.html" class="footer__nav-link">Конфиденциальность</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="contact.html" class="footer__nav-link">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="help.html" class="footer__nav-link">Помощь</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипты - ВАЖЕН ПОРЯДОК! -->
+  <script src="assets/utils/forum-data.js"></script>
+  <script src="assets/utils/notifications.js"></script>
+  <script src="assets/auth.js"></script>
+  <script src="assets/main.js"></script>
+  <script src="assets/login.js"></script>
+  <script src="assets/footer.js"></script>
+</body>
+
+</html>

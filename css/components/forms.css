@@ -1,0 +1,347 @@
+/* ===== ФОРМЫ ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.form--login {
+  animation: fadeIn 0.5s ease-out 0.3s backwards;
+}
+
+/* ===== ГРУППЫ ФОРМ ===== */
+.form__group {}
+
+
+/* ===== ЛЕЙБЛЫ ===== */
+.form__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form__label-icon {
+  color: #667eea;
+  font-size: 0.9em;
+  width: 16px;
+  text-align: center;
+}
+
+/* ===== ОБЕРТКА ДЛЯ ИНПУТОВ ===== */
+.form__control {
+  position: relative;
+  margin-bottom: 8px;
+
+}
+
+/* ===== ИНПУТЫ ===== */
+.form__input {
+  width: 100%;
+  padding: 16px 52px 16px 52px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.form__input--register {
+  padding: 14px 52px 14px 14px;
+  margin-bottom: 12px;
+}
+
+.form__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.form__input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.form__input:focus {
+  /* outline: none;
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1); */
+}
+
+.form__input--error {
+  border-color: #ff4757;
+  background: rgba(255, 71, 87, 0.05);
+}
+
+.form__input--error:focus {
+  box-shadow: 0 0 0 4px rgba(255, 71, 87, 0.1);
+}
+
+/* ===== ИКОНКИ В ИНПУТАХ ===== */
+.form__icon {
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.form__input:focus+.form__icon {
+  color: #667eea;
+}
+
+/* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ПАРОЛЯ ===== */
+.form__toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.form__toggle-password:hover {
+  color: #667eea;
+}
+
+/* ===== ОШИБКИ ===== */
+.form__error {
+  font-size: 0.85rem;
+  color: #ff4757;
+  min-height: 20px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.form__error:not(:empty) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ОПЦИИ ФОРМЫ ===== */
+.form__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* ===== ЧЕКБОКС ===== */
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.checkbox:hover {
+  color: white;
+}
+
+.checkbox__input:focus-visible+.checkbox__box {
+  outline: none;
+}
+
+.checkbox:has(:focus-visible) {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.checkbox__box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.checkbox__icon {
+  color: white;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.checkbox__input:checked+.checkbox__box {
+  border-color: #667eea;
+  background: #667eea;
+}
+
+.checkbox__input:checked+.checkbox__box .checkbox__icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox__text {
+  line-height: 1;
+}
+
+/* ===== ССЫЛКИ ===== */
+.form__link {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.form__link:hover {
+  color: #f093fb;
+}
+
+.form__link:active {
+  color: #9e46a8;
+  transform: scale(0.98);
+}
+
+.form__link:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.form__link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== РАЗДЕЛИТЕЛЬ ===== */
+.form__divider {
+  position: relative;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form__divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%);
+}
+
+.form__divider-text {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===== СОЦИАЛЬНАЯ АВТОРИЗАЦИЯ ===== */
+.auth__social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* ===== СООБЩЕНИЯ ФОРМЫ ===== */
+.form__message {
+  display: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+
+.form__message--error {
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid rgba(255, 71, 87, 0.2);
+  color: #ff6b81;
+}
+
+.form__message--success {
+  background: rgba(46, 213, 115, 0.1);
+  border: 1px solid rgba(46, 213, 115, 0.2);
+  color: #2ed573;
+}
+
+.form__message:not(:empty) {
+  display: block;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.form__message.show {
+  display: block;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+  .form__group {}
+
+  .form__input {
+    padding: 14px 48px 14px 48px;
+  }
+
+
+
+  .form__options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .auth__social {
+    flex-direction: column;
+  }
+
+  .auth__social {}
+}
+
+@media (max-width: 576px) {
+  .form__divider {
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация - Standoff 2 Forum</title>
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/variables.css"> <!-- 1. переменные -->
+  <link rel="stylesheet" href="css/fontawesome.css"> <!-- 2. Иконки -->
+  <link rel="stylesheet" href="css/components/animations.css"> <!-- 2. анимации -->
+  <link rel="stylesheet" href="css/components/forms.css"> <!-- 3. формы -->
+  <link rel="stylesheet" href="css/components/buttons.css"> <!-- 4. кнопки -->
+  <link rel="stylesheet" href="css/components/cards.css"> <!-- 5. карточки -->
+  <link rel="stylesheet" href="css/style-register.css"> <!-- 6. специфика -->
+  <link rel="stylesheet" href="css/media.css"> <!-- 7. адаптивность -->
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="page__body page__body--auth">
+  <a href="#main-content" class="visually-hidden focusable">Перейти к основному содержанию</a>
+
+  <header class="navbar header" role="banner">
+    <div class="container header__container">
+      <div class="header__inner header__inner-register">
+        <div class="header__logo-section">
+          <a href="index.html" class="header__logo" aria-label="На главную страницу Standoff 2 Forum">
+            <i class="fas fa-crosshairs header__logo-icon" aria-hidden="true"></i>
+            <div class="header__logo-text">
+              <span class="header__logo-title">Standoff2<span class="header__highlight">Forum</span></span>
+              <span class="header__tagline">Сообщество игроков</span>
+            </div>
+          </a>
+        </div>
+        <!-- Навигация -->
+        <nav class="header__nav" aria-label="Навигация по странице регистрации">
+          <a href="index.html" class="link link--back header__back-link" aria-label="Вернуться на главную страницу">
+            <i class="fas fa-arrow-left header__back-icon" aria-hidden="true"></i>
+            <span class="header__back-text">На главную</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main register" id="main-content" role="main">
+    <div class="container container--register">
+      <section class="register__section" aria-labelledby="register-heading">
+        <div class="card card--register">
+          <div class="card__header register__header">
+            <h1 class="card__title register__title" id="register-heading">
+              <i class="fas fa-user-plus card__title-icon" aria-hidden="true"></i>
+              Регистрация
+            </h1>
+            <p class="card__subtitle">Создайте аккаунт, чтобы присоединиться к сообществу Standoff 2</p>
+          </div>
+
+          <!-- Форма регистрации -->
+          <form class="form form--register" id="registerForm" novalidate aria-label="Форма регистрации">
+            <!-- Поле ввода имя пользователя -->
+            <div class="form__group">
+              <label for="register-username" class="form__label">
+                <i class="fas fa-user form__label-icon" aria-hidden="true"></i>
+                Имя пользователя <span aria-label="обязательное поле">*</span>
+              </label>
+              <input type="text" id="register-username" name="username" class="form__input form__input--register"
+                required placeholder="Придумайте уникальное имя" aria-required="true" aria-describedby="username-hint">
+              <div class="form-hint" id="username-hint">От 3 до 20 символов, только буквы и цифры</div>
+            </div>
+
+            <!-- Поле ввода email -->
+            <div class="form__group">
+              <label for="register-email" class="form__label">
+                <i class="fas fa-envelope form__label-icon" aria-hidden="true"></i>
+                Email адрес <span aria-label="обязательное поле">*</span>
+              </label>
+              <input type="email" id="register-email" name="email" class="form__input form__input--register" required
+                placeholder="Введите ваш email" aria-required="true" aria-describedby="email-hint">
+              <div class="form-hint" id="email-hint">Введите действующий email для подтверждения</div>
+            </div>
+
+            <!-- Поле ввода so2 id -->
+            <div class="form__group">
+              <label for="register-so2Id" class="form__label">
+                <i class="fas fa-gamepad form__label-icon" aria-hidden="true"></i>
+                Standoff 2 ID <span aria-label="обязательное поле">*</span>
+              </label>
+              <input type="text" id="register-so2Id" name="so2_id" required class="form__input form__input--register"
+                placeholder="Ваш ID в игре (например: 123456789)" aria-required="true" aria-describedby="so2id-hint"
+                pattern="[0-9]+" title="Только цифры">
+              <div class="form-hint" id="so2id-hint">Найти можно в настройках игры. Только цифры.</div>
+            </div>
+
+            <!-- Поле ввода пароль -->
+            <div class="form-row" role="group" aria-label="Поля для ввода пароля">
+              <div class="form__group form__group--register">
+                <label for="register-password" class="form__label form__label--register">
+                  <i class="fas fa-lock form__label-icon" aria-hidden="true"></i>
+                  Пароль <span aria-label="обязательное поле">*</span>
+                </label>
+                <input type="password" id="register-password" name="password" required
+                  class="form__input form__input--register" placeholder="Не менее 8 символов" aria-required="true"
+                  aria-describedby="password-hint" minlength="8">
+                <div class="form-hint" id="password-hint">Минимум 8 символов</div>
+              </div>
+
+              <!-- Поле ввода повтор пароля -->
+              <div class="form__group">
+                <label for="register-confirm-password" class="form__label">
+                  <i class="fas fa-lock form__label-icon" aria-hidden="true"></i>
+                  Подтверждение пароля <span aria-label="обязательное поле">*</span>
+                </label>
+                <input type="password" id="register-confirm-password" name="confirm_password" required
+                  class="form__input form__input--register" placeholder="Повторите пароль" aria-required="true"
+                  aria-describedby="confirm-password-hint">
+                <div class="form-hint" id="confirm-password-hint">Повторите пароль для подтверждения</div>
+              </div>
+            </div>
+
+            <!-- Согласие с правилами форума -->
+            <div class="form__group">
+              <label class="checkbox checkbox--register">
+                <input type="checkbox" name="agree_terms" class="checkbox__input" required aria-required="true"
+                  aria-describedby="terms-text">
+                <span class="checkbox__box" aria-hidden="true">
+                  <i class="fas fa-check checkbox__icon" aria-hidden="true"></i>
+                </span>
+                <span id="terms-text">Я согласен с <a href="#" aria-label="Прочитать правила форума">правилами
+                    форума</a> и <a href="#" aria-label="Прочитать политику конфиденциальности">политикой
+                    конфиденциальности</a> *</span>
+              </label>
+              <input type="hidden" name="notifications" value="false">
+            </div>
+
+            <!-- Согласие на получение уведомлений -->
+            <div class="form__options form__options--notification">
+              <label class="checkbox checkbox--register">
+                <input type="checkbox" name="notifications" class="checkbox__input"
+                  aria-describedby="notifications-text">
+                <span class="checkbox__box" aria-hidden="true">
+                  <i class="fas fa-check checkbox__icon" aria-hidden="true"></i>
+                </span>
+                <span id="notifications-text">Получать уведомления о новых темах и событиях</span>
+              </label>
+            </div>
+
+            <!-- Кнопка отправки -->
+            <button type="submit" class="btn btn--primary btn--block btn--submit"
+              aria-label="Зарегистрироваться на форуме">
+              <i class="fas fa-user-plus btn__icon" aria-hidden="true"></i>
+              Зарегистрироваться
+              <span class="btn__loader" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <!-- Разделитель и регистрация -->
+          <div class="form__card">
+            <p class="card__text">
+              Уже есть аккаунт? <a href="login.html" class="card__link" aria-label="Перейти на страницу входа">Войти</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="register__info" aria-label="Преимущества регистрации">
+        <div class="card card--info">
+          <div class="card__header">
+            <h2 class="card__title">Преимущества регистрации</h2>
+          </div>
+          <ul class="features-list register__features-list">
+            <li class="features-list__item">
+              <div class="features-list__icon" aria-hidden="true">
+                <i class="fas fa-id-card"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Профиль игрока</h3>
+                <p class="features-list__description">Укажите свой Standoff 2 ID, ранг и статистику в профиле</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon" aria-hidden="true">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Поиск команды</h3>
+                <p class="features-list__description">Находите напарников по рангу для совместной игры</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon" aria-hidden="true">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Полный доступ к форуму</h3>
+                <p class="features-list__description">Создавайте темы, комментируйте и участвуйте в обсуждениях</p>
+              </div>
+            </li>
+
+            <li class="features-list__item">
+              <div class="features-list__icon" aria-hidden="true">
+                <i class="fas fa-bell"></i>
+              </div>
+              <div class="features-list__content">
+                <h3 class="features-list__title">Уведомления</h3>
+                <p class="features-list__description">Будьте в курсе ответов на ваши темы и сообщений</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer footer--register" role="contentinfo">
+    <div class="container">
+      <div class="footer__content footer__content--register">
+        <p class="footer__copyright">
+          &copy; 2023 Standoff2Forum. Все права защищены.
+        </p>
+        <p class="footer__disclaimer">
+          Это фанатский проект и не связан с официальными разработчиками Standoff 2.
+        </p>
+        <nav class="footer__nav" aria-label="Дополнительная навигация в подвале">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="rules.html" class="footer__nav-link" aria-label="Прочитать правила форума">Правила</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="privacy.html" class="footer__nav-link"
+                aria-label="Прочитать политику конфиденциальности">Конфиденциальность</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="contact.html" class="footer__nav-link" aria-label="Перейти на страницу контактов">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="help.html" class="footer__nav-link" aria-label="Перейти в раздел помощи">Помощь</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="assets/utils/forum-data.js"></script>
+  <script src="assets/utils/notifications.js"></script>
+  <script src="assets/auth.js"></script>
+  <script src="assets/main.js"></script>
+  <script src="assets/register.js"></script>
+  <script src="assets/footer.js"></script>
+</body>
+
+</html>

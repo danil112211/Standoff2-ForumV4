@@ -1,0 +1,216 @@
+/* ===== СТРАНИЦА УВЕДОМЛЕНИЙ ===== */
+.notifications-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Заголовок */
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.notifications-header__title {
+  color: var(--color-text-white);
+  font-size: 1.8rem;
+}
+
+.notifications-header__actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Фильтры */
+.notifications-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.notifications-filters__btn {
+  padding: 8px 16px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.notifications-filters__btn:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--color-primary-start);
+  border-color: var(--color-primary-start);
+}
+
+.notifications-filters__btn.active {
+  background: var(--color-primary-start);
+  color: white;
+  border-color: var(--color-primary-start);
+}
+
+/* Даты */
+.notifications-date {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 20px 0 10px;
+  padding-left: 10px;
+}
+
+.notifications-date:first-of-type {
+  margin-top: 0;
+}
+
+/* Элемент уведомления */
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.notification-item:hover {
+  border-color: var(--color-border-hover);
+  transform: translateX(5px);
+}
+
+.notification-item.unread {
+  background: rgba(102, 126, 234, 0.05);
+  border-left: 4px solid var(--color-primary-start);
+}
+
+.notification-item__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.notification-item__content {
+  flex: 1;
+}
+
+.notification-item__text {
+  color: var(--color-text-secondary);
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.notification-item__text strong {
+  color: var(--color-text-white);
+  font-weight: 600;
+}
+
+.notification-item__text a {
+  color: var(--color-primary-start);
+  text-decoration: none;
+}
+
+.notification-item__text a:hover {
+  text-decoration: underline;
+}
+
+.notification-item__time {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.notification-item__mark-read {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.notification-item__mark-read:hover {
+  color: var(--color-primary-start);
+  transform: scale(1.2);
+}
+
+.unread .notification-item__mark-read {
+  color: var(--color-primary-start);
+}
+
+/* Кнопка загрузить еще */
+.notifications-more {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.notifications-more .btn {
+  padding: 12px 30px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .notifications-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .notifications-header__actions {
+    width: 100%;
+  }
+
+  .notifications-header__actions .btn {
+    flex: 1;
+  }
+
+  .notifications-filters {
+    justify-content: center;
+  }
+
+  .notification-item {
+    padding: 12px 15px;
+  }
+
+  .notification-item__icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .notification-item {
+    flex-wrap: wrap;
+  }
+
+  .notification-item__content {
+    width: calc(100% - 55px);
+  }
+
+  .notification-item__mark-read {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

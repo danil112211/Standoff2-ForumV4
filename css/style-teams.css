@@ -1,0 +1,464 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ ПОИСКА КОМАНДЫ ===== */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header__title {
+  font-size: 2.5rem;
+  color: var(--color-text-white);
+  margin-bottom: 10px;
+}
+
+.page-header__subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Лейаут */
+.teams-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+/* Фильтры */
+.teams-sidebar {
+  position: sticky;
+  top: calc(148px + 20px);
+  height: fit-content;
+}
+
+.filters {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.filters__section {
+  margin-bottom: 20px;
+}
+
+.filters__title {
+  text-align: center;
+  color: var(--color-text-white);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.filters__group {
+  margin-bottom: 15px;
+}
+
+.filters__label {
+  display: block;
+  color: var(--color-text-secondary);
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.filters__search {
+  position: relative;
+}
+
+.filters__search i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+}
+
+.filters__input,
+.filters__select {
+  width: 100%;
+  padding: 10px 12px 10px 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  font-size: 0.95rem;
+}
+
+.filters__search .filters__input {
+  padding-left: 35px;
+}
+
+.filters__select {
+  padding: 10px 12px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.filters__input:focus,
+.filters__select:focus {
+  outline: none;
+  border-color: var(--color-primary-start);
+}
+
+.filters__checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.filters__checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary-start);
+}
+
+.filters__checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary-start);
+}
+
+.filters__checkbox-text {
+  font-size: 0.95rem;
+}
+
+.filters__actions {}
+
+#create-team {
+  width: 100%;
+}
+
+/* Кнопка сброса */
+#reset-filters {
+  width: 100%;
+}
+
+/* Карточки команд */
+
+.teams-content {}
+
+.teams__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.team-card__header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.team-card__logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card__info {
+  flex: 1;
+}
+
+.team-card__name {
+  color: var(--color-text-white);
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.team-card__tag {
+  color: var(--color-primary-start);
+  font-size: 0.9rem;
+}
+
+.team-card__rank {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--color-primary-start);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.team-card__rank i {
+  margin-right: 3px;
+  font-size: 0.8rem;
+}
+
+.team-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.team-card__stat {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.team-card__stat i {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-primary-start);
+  font-size: 1rem;
+}
+
+.team-card__description {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.team-card__requirements {
+  margin-bottom: 15px;
+}
+
+.team-card__requirements strong {
+  color: var(--color-text-white);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.team-card__requirements p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.team-card__roles {
+  margin-bottom: 20px;
+}
+
+.team-card__roles strong {
+  color: var(--color-text-white);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.team-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.role-tag {
+  padding: 4px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--color-primary-start);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.team-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.team-card__leader {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.team-card__leader i {
+  color: #ffd700;
+  margin-right: 5px;
+}
+
+.team-card__join {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.team-card__join:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Пустое состояние */
+.teams__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+}
+
+.teams__empty i {
+  font-size: 4rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.teams__empty h3 {
+  color: var(--color-text-white);
+  margin-bottom: 10px;
+}
+
+.teams__empty p {
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+/* footer */
+
+.footer__socal {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__disclaimer {
+  margin-bottom: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+
+  .teams-content {
+    /* margin-bottom: 40px; */
+  }
+
+  .teams-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-sidebar {
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .filters__section {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 15px;
+  }
+
+  .filter__content {}
+}
+
+@media (max-width: 768px) {
+  .page-header__title {
+    font-size: 2rem;
+  }
+
+  .teams__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card__stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px
+  }
+
+  .team-card__stat {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .team-card__stat i {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .page-header {
+    margin-bottom: 30px;
+  }
+
+  .page-header__title {
+    font-size: 1.8rem;
+  }
+
+  .filters {
+    padding: 15px;
+  }
+
+  .filters__section {
+    grid-template-columns: 1fr;
+  }
+
+  .filters__title {
+    margin-bottom: 10px;
+  }
+
+  .teams-layout {
+    padding-bottom: 0;
+  }
+
+  .teams-sidebar {
+    margin-bottom: 0;
+  }
+
+  .team-card {
+    padding: 15px;
+  }
+
+  .team-card__roles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .team-card__roles strong {
+    margin-bottom: 0;
+  }
+
+  .team-card__footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .team-card__join {
+    width: 100%;
+  }
+}

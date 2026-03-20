@@ -1,0 +1,162 @@
+/* ===== КАСТОМНЫЙ SELECT ===== */
+
+/* Контейнер кастомного select */
+.custom-select {
+  position: relative;
+  width: 100%;
+  font-family: var(--font-primary);
+  margin-bottom: 5px;
+}
+
+/* Выбранный элемент (как кнопка) */
+.custom-select__selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-white);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  user-select: none;
+}
+
+.custom-select__selected:hover {
+  border-color: var(--color-primary-start);
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.custom-select__selected i {
+  color: var(--color-text-muted);
+  transition: transform var(--transition-base);
+  font-size: 0.8rem;
+}
+
+.custom-select__selected.active i {
+  transform: rotate(180deg);
+}
+
+/* Выпадающий список */
+.custom-select__options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-base);
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.custom-select__options.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Элементы списка */
+.custom-select__option {
+  padding: 10px 15px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.custom-select__option:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--color-text-white);
+}
+
+.custom-select__option.selected {
+  background: var(--color-primary-start);
+  color: white;
+  position: relative;
+  padding-left: 30px;
+}
+
+.custom-select__option.selected::before {
+  content: '✓';
+  position: absolute;
+  left: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Скроллбар */
+.custom-select__options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-select__options::-webkit-scrollbar-track {
+  background: var(--color-bg-card);
+  border-radius: 3px;
+}
+
+.custom-select__options::-webkit-scrollbar-thumb {
+  background: var(--color-primary-start);
+  border-radius: 3px;
+}
+
+.custom-select__options::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark, #5a67d8);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .custom-select__selected {
+    font-size: 0.9rem;
+  }
+
+  .custom-select__option {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-select__selected {
+    font-size: 0.85rem;
+  }
+
+  .custom-select__options {
+    max-height: 200px;
+  }
+}
+
+/* Темная тема (если есть) */
+@media (prefers-color-scheme: dark) {
+  .custom-select__options {
+    background: #1a1a2e;
+  }
+}
+
+/* Убираем стандартную стрелку у select */
+/* select.custom {
+  display: none;
+} */
+
+/* Для отладки - показать если что-то пошло не так */
+select.custom.debug {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: red;
+  color: white;
+}
